@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href ="{{ url_for('static', filename = 'css/goal.css')}}">
+    <script src = "{{ url_for('static', filename = 'js/goal.js')}}"></script>
+    <title>Goal</title>
+</head>
+<body>
+    
+    <h1> Sampling Goal </h1>
+            
+    <h4>Sapling Goal to Offset Annual Gas and Elctricity Consumption <b> {{electree}} salpings</b></h4>
+    <h4>Sapling Goal to Offset Annual Gas Consumption <b>{{gtree}} salpings</b></h4>
+    <h4>Sapling Goal to Offset Annual Electricity Consumption <b>{{total_tree}} salpings</b></h4>
+    <p>*To learn more about how we made these calculations, please <a href="">click here.</a></p>
+    <p></p>
+    <h5 >These numbers may be higher or lower than you think is reasonable to plant. Feel free to
+        offset 50% of your energy consumption or even 200%, it's up to you. Once you have your
+        event date, sapling goal, and sapling species, please fill out this <a href="">form.</a></h5>
+    <p></p>
+    <h5>Last year, the average sapling goal was 200. However, there was a lot of variability and some
+        schools even had a goal of over a 1,000 saplings (and met their goal!). The minimum goal you
+        can set is 50 saplings. You are not required to meet your goal and you are also welcome to
+        plant more saplings than your initial goal.</h5>
+    <br></br>
+    
+    <h1>Calculations</h1>
+    <h3> Assumptions </h3>
+    <p><b>-</b> On Average Schools use 10 kilowatt-hours of electricity per square foot anually</p>
+    <p><b>-</b> On Average Schools use 50 cubic feet of natural gas per square foot anually</p>
+    <h3>Electricity Consumption</h3>
+    <p> ({{usersquare}} <strike>squarefeet</strike> * <sup>10 <strike>kilowatt-hours</strike></sup>&frasl;<sub><strike>square foot</strike></sub>  *  <sup>1 <strike>megawatt-hours</strike></sup>&frasl;<sub>1000 <strike>kilowatt-hours</strike></sub> ) * <sup>{{userco2}} lbs of carbon</sup>&frasl;<sub><strike>megawatt-hours</strike></sub>= {{squareval}} lbs of carbon</p >
+    <h3>Gas Consumption</h3>
+    <p> ({{usersquare}} <strike>squarefeet</strike> * <sup>50 <strike>cubic feet of natural gas</strike></sup>&frasl;<sub><strike>square foot</strike></sub>  *  <sup>1 <strike>therm</strike></sup>&frasl;<sub>96.43 <strike>cubic feet</strike></sub> ) *  <sup>11.7 lbs of carbon</sup>&frasl;<sub><strike>therm</strike></sub>= {{co2val}} lbs of carbon</p >
+    <h3>Understanding Behind Electricty And Gas Consumption offset</h3>
+    <p>To find the number of samplings needed to offset the electricity and gas consumptions, <p>multiply the total pounds of carbon by 1 over 2400 since 1 tree captures <p>2400 lbs of carbon over 50 years</p>
+    <h3>Number of Samplings Needed To OffSet Electricity And Gas Comsumption</h3>
+    <p> {{squareval}} <strike>lbs of carbon</strike> * <sup>1 tree</sup>&frasl;<sub>2400 <strike>lbs of carbon</strike></sub>  = {{electree}} saplings</p >
+    <p> {{co2val}} <strike>lbs of carbon</strike> * <sup>1 tree</sup>&frasl;<sub>2400 <strike>lbs of carbon</strike></sub>  = {{gtree}} saplings</p>
+    <p>{{electree}} saplings + {{gtree}} samplings = {{total_tree}} saplings</p>
+
+
+
+
+
+
+
+            
+</body>
+</html>

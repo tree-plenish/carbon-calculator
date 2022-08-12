@@ -4,44 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href ="{{ url_for('static', filename = 'css/main.css')}}">
-    <title>Carbon Emissions</title>
+    <link rel = "stylesheet" href ="{{ url_for('static', filename = 'css/index.css')}}">
+    <script src = "{{ url_for('static', filename = 'js/index.js')}}"></script>
+    <title>Carbon Calculator</title>
 </head>
 <body>
-    <h1>Carbon Emissions Calculator</h1>
+    <h1>Find Your Sapling Goal</h1>
+    <p>This calculator estimates your school's carbon emissions from electricity and gas consumption and estimates the number of trees needed to offset your energy usage</p>
     
 
     
-        <p></p>
-        <form action = "/" method = "POST"> 
-            <label for="square">Square Feet: </label>
-            <input required type = "text" name = "square" id = "square"> 
-            <br></br>
-            <label for="co2">CO2 NEWE Emission Rate: </label>
-            <input required type = "text" name = "co2" id = "co2"> 
-            <br></br>
-            <input  id = "button1" type = "submit" value="Calculate">
-            <div id = "hide">
+    <p></p>
+    
+    <form action = "/" method = "POST"> 
+        <label for="square">How many square feet is your school? </label>
+        <input required type = "text" name = "square" id = "square"> 
+        <h5>To answer the next question, go to this <a href = "https://www.epa.gov/egrid/power-profiler#/NEWE">link</a> and enter your zip code on the left.
+            Find the CO2 number in the blue box at the top.</h5>
+        
+    <label for="co2">What is your community's CO2 NEWE Emission Rate? </label>
+        <input required type = "text" name = "co2" id = "co2"> 
+        <br></br>
+        <a href = "goal"></a><input  id = "button1" type = "submit" value="Calculate"></a>
+        <div id = "hide">
             
+                
 
 
 
-            <h3> Assumptions </h3>
-            <p><b>-</b> On Average Schools use 10 kilowatt-hours of electricity per square foot anually</p>
-            <p><b>-</b> On Average Schools use 50 cubic feet of natural gas per square foot anually</p>
-            <h3>Electricity Consumption</h3>
-            <p> ({{usersquare}} <strike>squarefeet</strike> * <sup>10 <strike>kilowatt-hours</strike></sup>&frasl;<sub><strike>square foot</strike></sub>  *  <sup>1 megawatt-hours</sup>&frasl;<sub>1000 <strike>kilowatt-hours</strike></sub> ) * <sup>{{userco2}} lbs of carbon</sup>&frasl;<sub><strike>megawatt-hours</strike></sub>= {{squareval}} lbs of carbon</p >
-            <h3>Gas Consumption</h3>
-            <p> ({{usersquare}} <strike>squarefeet</strike> * <sup>50 <strike>cubic feet of natural gas</strike></sup>&frasl;<sub><strike>square foot</strike></sub>  *  <sup>1 therm</sup>&frasl;<sub>96.43 <strike>cubic feet</strike></sub> ) * 11.7 = {{co2val}} lbs of carbon</p >
-            <h3>Understanding Behind Electricty And Gas Consumption offset</h3>
-            <p ALIGN=LEFT>To find the number of samplings needed to offset the electricity and gas consumptions, <p>multiply the total pounds of carbon by 1 over 2400 since 1 tree captures <p>2400 lbs of carbon over 50 years</p>
-            <h3>Number of Samplings Needed To OffSet Electricity And Gas Comsumption</h3>
-            <p> {{squareval}} <strike>lbs of carbon</strike> * <sup>1 tree</sup>&frasl;<sub>2400 <strike>lbs of carbon</strike></sub>  = {{electree}} trees</p >
-            <p> {{co2val}} <strike>lbs of carbon</strike> * <sup>1 tree</sup>&frasl;<sub>2400 <strike>lbs of carbon</strike></sub>  = {{gtree}} trees</p >
-            <h3>Sampling Goal</h3>
-            <p>Electricity Comsumption Offset Goal: <b>atleast {{electree}} trees</b></p>
-            <p>Gas Comsumption Offset Goal: <b>atleast {{gtree}} trees</b></p>
-            <p>Total Offset Goal: <b>atleast {{total_tree}} trees</b></p></div>
+            
 
             
             
