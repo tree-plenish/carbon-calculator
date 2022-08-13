@@ -54,3 +54,16 @@ input[type = "submit"]  {
     border-radius: 40px;
 }
 
+span.circle {
+    background: #377c39;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: white;
+    display: inline-block;
+    line-height: 40px;
+    margin-right: 5px;
+    text-align: center;
+    width: 40px;
+  }
+
