@@ -1,5 +1,5 @@
 import math
-from flask import Flask, render_template,request,url_for,redirect,session
+from flask import Flask, render_template, request, url_for,redirect, session
 
 
 app = Flask(__name__)
@@ -13,8 +13,8 @@ def index():
     if request.method == "POST":
         session["square_noint"] = request.form.get("square")
         session["co2_notint"] = request.form.get("co2")
-        session["square"] = int(request.form.get("square"))
-        session["co2"] = int(request.form.get("co2"))
+        session["square"] = float(request.form.get("square"))
+        session["co2"] = float(request.form.get("co2"))
         
         return redirect("/goal")
     
