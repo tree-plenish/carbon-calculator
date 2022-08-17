@@ -19,7 +19,11 @@ def index():
         return redirect("/goal")
     
     return render_template("index.html", squareval = electricityval, co2val = gasval, usersquare = square_noint, userco2 = co2_notint, electree=electricitytree, gtree =  gastree, total_tree = total)
-    
+
+@app.route("/college/")
+def college():
+    return render_template("college.html")
+
 @app.route('/goal', methods = ["POST", "GET"])
 def goal():
     square_noint = session.get("square_noint")
