@@ -1,5 +1,5 @@
 html {
-    background-color: #7cc23feb;
+    background-color: #71b139eb;
 }
 
 h1 {
@@ -7,13 +7,13 @@ h1 {
     font-weight: 300;
     font-size: 50px;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 30px;
 }
 
 p {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    font-size: medium;
+    font-size: large;
     text-align: center;
 }
 
@@ -43,7 +43,7 @@ h5 {
 }
 
 input[type = "submit"]  {
-    background-color: #377c39;
+    background-color: #2e6730;
     font-family: 'Open Sans', sans-serif;
     color: white;
     padding: 15px 32px;
@@ -54,8 +54,28 @@ input[type = "submit"]  {
     border-radius: 40px;
 }
 
+span[class = "collegeButton"] {
+    background-color: #2e6730;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    padding: 15px 32px;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 40px;
+    margin-left: 380px;
+    margin-right: 360px;
+    text-decoration: none;
+}
+
+a:link {color:#FFFFFF;} 
+a:visited {color:#FFFFFF;} 
+a:hover {color:#FFFFFF;} 
+a:active {color:#FFFFFF;}  
+
 span.circle {
-    background: #377c39;
+    background: #2e6730;
     border-radius: 50%;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
