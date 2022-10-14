@@ -87,3 +87,6 @@ span.circle {
     width: 40px;
   }
 
+.error {
+    color: #990d03;
+}

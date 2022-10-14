@@ -11,14 +11,17 @@ square = co2 = electricityval = gasval = electricitytree = gastree = total = squ
 @application.route('/', methods = ["POST", "GET"])
 def index():
     if request.method == "POST":
-        session["square_noint"] = request.form.get("square")
-        session["co2_notint"] = request.form.get("co2")
-        session["square"] = float(request.form.get("square"))
-        session["co2"] = float(request.form.get("co2"))
-        
-        return redirect("/goal")
+        try:
+            session["square_noint"] = request.form.get("square")
+            session["co2_notint"] = request.form.get("co2")
+            session["square"] = float(request.form.get("square"))
+            session["co2"] = float(request.form.get("co2"))
+            return redirect("/goal")
+        except Exception as e:
+            print(e)
+            return render_template("index.html", squareval = electricityval, co2val = gasval, usersquare = square_noint, userco2 = co2_notint, electree=electricitytree, gtree =  gastree, total_tree = total, error=True)
     
-    return render_template("index.html", squareval = electricityval, co2val = gasval, usersquare = square_noint, userco2 = co2_notint, electree=electricitytree, gtree =  gastree, total_tree = total)
+    return render_template("index.html", squareval = electricityval, co2val = gasval, usersquare = square_noint, userco2 = co2_notint, electree=electricitytree, gtree =  gastree, total_tree = total, error=False)
 
 @application.route("/college/")
 def college():

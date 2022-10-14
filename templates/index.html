@@ -19,14 +19,17 @@
     
     <form action = "/" method = "POST">
         <span class="circle">1</span> <label for="square">How many square feet is your school? </label>
-        <input required type = "text" name = "square" id = "square"> 
+        <input required type = "text" name = "square" id = "square"> <span>square feet</span>
         <h5>To answer the next question, go to this <a href = "https://www.epa.gov/egrid/power-profiler#/NEWE">link</a> and enter your zip code on the left.<br>
             Find the CO2 number in the blue box at the top.</h5>
     
 
         <span class="circle">2</span><label for="co2">What is your community's CO2 NEWE Emission Rate? </label>
-        <input required type = "text" name = "co2" id = "co2"> 
+        <input required type = "text" name = "co2" id = "co2"> <span>lbs/MWh</span>
         <br><br><br>
+        {% if error %}
+            <p class="error">Please enter numbers only. Do not include units or other letters!</p>
+        {% endif %}
         <a href = "goal"></a><input  id = "button1" type = "submit" value="CALCULATE"></a>
         <div id = "hide"> <br><br>
             
